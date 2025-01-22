@@ -1,15 +1,24 @@
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
+using System.Collections;
 
 public class Health : MonoBehaviour
 {
+    [Header ("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+
+    [Header("iFrame")]
+    [SerializeField] private float iFramesDuration;
+    [SerializeField] private int numberOfFlashes;
+    private SpriteRenderer spriteRend;
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
+        spriteRend = GetComponent<SpriteRenderer>();
     }
     public void TakeDamage(float _damage)
     {
@@ -18,6 +27,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             anim.SetTrigger("hurt");
+            StartCoroutine(Invunerability());
         }
         else
         {
@@ -32,5 +42,17 @@ public class Health : MonoBehaviour
     public void addHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+    private IEnumerator Invunerability()
+    {
+        Physics2D.IgnoreLayerCollision(8, 9, true);
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            spriteRend.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(iFramesDuration / numberOfFlashes / 2.0f);
+            spriteRend.color = Color.white;
+            yield return new WaitForSeconds(iFramesDuration / numberOfFlashes / 2.0f);
+        }
+        Physics2D.IgnoreLayerCollision(8, 9, false);
     }
 }
