@@ -14,6 +14,9 @@ public class Health : MonoBehaviour
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRend;
+
+    [Header("Behaviours")]
+    [SerializeField] private Behaviour[] behaviours;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -35,19 +38,8 @@ public class Health : MonoBehaviour
             {
                 anim.SetTrigger("die");
 
-                if (GetComponent<PlayerMovement>())
-                {
-                    GetComponent<PlayerMovement>().enabled = false;
-                }
-
-                if (GetComponentInParent<EnemyPatrol>())
-                {
-                    GetComponentInParent<EnemyPatrol>().enabled = false;
-                }
-                if (GetComponent<MeleeEnemy>())
-                {
-                    GetComponent<MeleeEnemy>().enabled = false;
-                }
+                foreach (Behaviour comp in behaviours)
+                    comp.enabled = false;
 
                 dead = true;
             }
@@ -68,5 +60,9 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / numberOfFlashes / 2.0f);
         }
         Physics2D.IgnoreLayerCollision(8, 9, false);
+    }
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }
