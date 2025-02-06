@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6228697522734081970}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.6, y: -0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -298,6 +298,8 @@ MonoBehaviour:
   behaviours:
   - {fileID: 5173729717085712828}
   - {fileID: 0}
+  deathSound: {fileID: 8300000, guid: e068a71c38c94e542a666af3e89c4085, type: 3}
+  hurtSound: {fileID: 8300000, guid: 5c3caa53cffac774ea98dfa891dcb472, type: 3}
 --- !u!114 &5173729717085712828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +332,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  fireballSound: {fileID: 8300000, guid: ddad37e9c2dccda4daa506a95c72a3fd, type: 3}
 --- !u!114 &1722857027500155005
 MonoBehaviour:
   m_ObjectHideFlags: 0

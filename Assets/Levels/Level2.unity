@@ -3316,50 +3316,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &776735176
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 776735177}
-  - component: {fileID: 776735178}
-  m_Layer: 0
-  m_Name: LoadingManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &776735177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776735176}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -0.31999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &776735178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776735176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274c87a1853c2df4b86eca0678f8117f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &785400278
 GameObject:
   m_ObjectHideFlags: 0
@@ -9873,11 +9829,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8111113288748041930, guid: b6f616306518a56419fabafd5bc35fc6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.61
+      value: -9.2
       objectReference: {fileID: 0}
     - target: {fileID: 8111113288748041930, guid: b6f616306518a56419fabafd5bc35fc6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.32
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: 8111113288748041930, guid: b6f616306518a56419fabafd5bc35fc6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9966,4 +9922,3 @@ SceneRoots:
   - {fileID: 1079427889}
   - {fileID: 115200535}
   - {fileID: 1814860558}
-  - {fileID: 776735177}
