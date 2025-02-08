@@ -41,6 +41,7 @@ public class Health : MonoBehaviour
         {
             if (!dead)
             {
+                anim.SetBool("grounded", true);
                 anim.SetTrigger("die");
 
                 foreach (Behaviour comp in behaviours)
@@ -54,6 +55,18 @@ public class Health : MonoBehaviour
     public void addHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+    public void Respawn()
+    {
+        dead = false;
+        addHealth(startingHealth);
+        anim.ResetTrigger("die");
+        anim.Play("idle");
+        StartCoroutine(Invunerability());
+
+
+        foreach (Behaviour comp in behaviours)
+            comp.enabled = true;
     }
     private IEnumerator Invunerability()
     {
